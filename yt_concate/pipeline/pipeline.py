@@ -8,9 +8,10 @@ class Pipeline:
         self.steps = steps
 
     def run(self, inputs):
+        transporter = None  # 運輸車，把生產線的東西一個一個傳給亞一個生產線，初始為None代表沒有東西。
         for work in self.steps:
             try:
-                work.process(inputs)
+                transporter = work.process(transporter, inputs)
             except StepException as err:
                 print('休士頓，我們發現了一個錯誤！', err)
                 break

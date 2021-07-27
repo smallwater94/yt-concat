@@ -10,7 +10,7 @@ from yt_concate.pipeline.steps.step import Step
 
 
 class GetVideoList(Step):
-    def process(self, inputs):
+    def process(self, transporter, inputs):
         channel_id = inputs['channel_id']
         base_video_url = 'https://www.youtube.com/watch?v='
         base_search_url = 'https://www.googleapis.com/youtube/v3/search?'
