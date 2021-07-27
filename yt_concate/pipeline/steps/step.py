@@ -1,3 +1,4 @@
+# step 步驟
 # 建立 interface 介面
 from abc import ABC, abstractmethod  # Abstract Base Class 抽象類別
 

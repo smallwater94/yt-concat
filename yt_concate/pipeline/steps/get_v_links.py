@@ -6,7 +6,7 @@ import urllib.request
 import json
 
 from yt_concate.settings import API_KEY
-from yt_concate.steps.step import Step
+from yt_concate.pipeline.steps.step import Step
 
 
 class GetVideoList(Step):
