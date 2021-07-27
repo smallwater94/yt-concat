@@ -1,4 +1,5 @@
 from yt_concate.pipeline.steps.get_v_links import GetVideoList
+from yt_concate.pipeline.steps.download_captions import DownloadCaptions
 from yt_concate.pipeline.pipeline import Pipeline
 
 CHANNEL_ID = 'UCjXfkj5iapKHJrhYfAF9ZGg'
@@ -13,6 +14,7 @@ def main():
     # 步驟清單，裝著所有步驟，讓底下的for loop一個一個去call
     steps = [
         GetVideoList(),
+        DownloadCaptions(),
     ]
 
     p = Pipeline(steps)
