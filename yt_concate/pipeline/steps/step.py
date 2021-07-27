@@ -8,7 +8,7 @@ class Step(ABC):  # Base class
         pass
 
     @abstractmethod
-    def process(self, transporter, inputs):  # 執行
+    def process(self, transporter, inputs, utils):  # 執行
         pass
 
 
