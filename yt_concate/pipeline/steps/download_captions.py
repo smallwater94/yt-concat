@@ -18,7 +18,7 @@ class DownloadCaptions(Step):
             except:
                 print('非英文或無字幕，網址: ', furl)
                 continue
-
+            print('寫入中', furl)
             with open(utils.get_caption_filepath(url), "w") as f:
                 for i in srt:
                     f.write("{}\n".format(i))

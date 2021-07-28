@@ -5,7 +5,7 @@ from yt_concate.pipeline.steps.download_captions import DownloadCaptions
 from yt_concate.pipeline.steps.postflight import Postflight
 from yt_concate.utils import Utils
 
-CHANNEL_ID = 'UCjXfkj5iapKHJrhYfAF9ZGg'
+CHANNEL_ID = 'UCKSVUHI9rbbkXhvAXK-2uxA'
 
 # 輸入字典
 inputs = {
