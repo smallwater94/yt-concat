@@ -9,6 +9,9 @@ class DownloadCaptions(Step):
 
         for furl in transporter:
             url = utils.get_video_id_from_url(furl)  # 擷取影片網址代號的部分
+            if utils.caption_file_exists(url):
+                print('已經下載過了喔:', url)
+                continue
             try:
                 # 使用 set 變量和 .get_transcript() 函數獲得的字典列表
                 srt = YouTubeTranscriptApi.get_transcript(url)
