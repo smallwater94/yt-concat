@@ -8,7 +8,7 @@ class DownloadCaptions(Step):
     def process(self, transporter, inputs, utils):
 
         for yto in transporter:
-            if yto.caption_file_exists():
+            if utils.caption_file_exists(yto):
                 print('已經下載過了喔:', yto.v_id)
                 continue
             try:

@@ -21,6 +21,3 @@ class YTO:
     def get_video_filepath(self):
         return os.path.join(VIDEOS_DIR, self.v_id + '.txt')
 
-    def caption_file_exists(self):
-        path = self.get_caption_filepath()
-        return os.path.exists(path) and os.path.getsize(path) > 0
