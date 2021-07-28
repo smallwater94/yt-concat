@@ -1,6 +1,7 @@
 from yt_concate.pipeline.pipeline import Pipeline
 from yt_concate.pipeline.steps.preflight import Preflight
 from yt_concate.pipeline.steps.get_v_links import GetVideoList
+from yt_concate.pipeline.steps.initialize_yto import InitializeYTO
 from yt_concate.pipeline.steps.download_captions import DownloadCaptions
 from yt_concate.pipeline.steps.postflight import Postflight
 from yt_concate.utils import Utils
@@ -18,6 +19,7 @@ def main():
     steps = [
         Preflight(),
         GetVideoList(),
+        InitializeYTO(),
         DownloadCaptions(),
         Postflight(),
     ]
