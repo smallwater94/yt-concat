@@ -16,6 +16,13 @@ class Utils:
     def get_video_id_from_url(furl):
         return furl.split('watch?v=')[-1]
 
+    def get_videos_list_filepath(self, channel_id):
+        return os.path.join(DOWNLOADS_DIR, channel_id + '.txt')
+
+    def videos_list_file_exists(self, channel_id):
+        path = self.get_videos_list_filepath(channel_id)
+        return os.path.exists(path) and os.path.getsize(path) > 0
+
     def get_caption_path(self, url):
         return os.path.join(CAPTIONS_DIR, self.get_video_id_from_url(url) + '.txt')
 
