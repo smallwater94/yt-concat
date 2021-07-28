@@ -23,9 +23,9 @@ class Utils:
         path = self.get_videos_list_filepath(channel_id)
         return os.path.exists(path) and os.path.getsize(path) > 0
 
-    def get_caption_path(self, url):
+    def get_caption_filepath(self, url):
         return os.path.join(CAPTIONS_DIR, self.get_video_id_from_url(url) + '.txt')
 
     def caption_file_exists(self, url):
-        path = self.get_caption_path(url)
+        path = self.get_caption_filepath(url)
         return os.path.exists(path) and os.path.getsize(path) > 0

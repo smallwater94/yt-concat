@@ -37,10 +37,10 @@ class GetVideoList(Step):
             except KeyError:
                 break
         print(video_links)  # fot test
-        self.wrire_to_file(video_links, utils.get_videos_list_filepath(channel_id))
+        self.write_to_file(video_links, utils.get_videos_list_filepath(channel_id))
         return video_links
 
-    def wrire_to_file(self, video_links, filepath):
+    def write_to_file(self, video_links, filepath):
         with open(filepath, 'w') as f:
             for url in video_links:
                 f.write(url + '\n')
