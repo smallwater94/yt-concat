@@ -4,6 +4,7 @@ from yt_concate.pipeline.steps.get_v_links import GetVideoList
 from yt_concate.pipeline.steps.initialize_yto import InitializeYTO
 from yt_concate.pipeline.steps.download_captions import DownloadCaptions
 from yt_concate.pipeline.steps.read_captions import ReadCaptions
+from yt_concate.pipeline.steps.search import Search
 from yt_concate.pipeline.steps.postflight import Postflight
 from yt_concate.utils import Utils
 
@@ -13,7 +14,8 @@ CHANNEL_ID = 'UCKSVUHI9rbbkXhvAXK-2uxA'
 
 # 輸入字典
 inputs = {
-    'channel_id': CHANNEL_ID
+    'channel_id': CHANNEL_ID,
+    'search_word': 'incredible'
 }
 
 
@@ -25,6 +27,7 @@ def main():
         InitializeYTO(),
         DownloadCaptions(),
         ReadCaptions(),
+        Search(),
         Postflight(),
     ]
     utils = Utils()
@@ -34,4 +37,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
