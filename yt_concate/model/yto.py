@@ -11,6 +11,7 @@ class YTO:
         # self.video_filepath = self.get_video_filepath()
         self.captions = None
         self.time = None
+        self.download_or_not = False
 
     @staticmethod
     def get_video_id_from_url(url):  # 擷取影片網址代號的部分，當作video_id

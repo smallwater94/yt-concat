@@ -10,6 +10,7 @@ class Search(Step):
                 try:
                     if inputs['search_word'] in yto.captions[n]['text']:
                         yto.time = yto.captions[n]['start']
+                        yto.download_or_not = True
                         counter += 1
                         break
                 except IndexError:
