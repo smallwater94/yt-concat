@@ -9,8 +9,12 @@ class DownLoadVideos(Step):
     def process(self, transporter, inputs, utils):
         counter = 0
         for catch_yto in transporter:
-            if counter < 10:
-                print('第', counter + 1, '支影片下載開始')
+            if counter < inputs['limit']:
+                print('第', counter + 1, '支影片開始下載')
+                if utils.videos_file_exists(catch_yto.yto):
+                    print('此影片已下載', catch_yto.yto.v_id)
+                    counter += 1
+                    continue
                 save_path = '/'.join(os.getcwd().split('/')[:3]) + '/downloads/videos'
                 file_name = f'/{catch_yto.yto.v_id}.mp4'
 

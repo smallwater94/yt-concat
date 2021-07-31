@@ -27,6 +27,14 @@ class Utils:
         filepath = yto.get_caption_filepath()
         return os.path.exists(filepath) and os.path.getsize(filepath) > 0
 
+    def videos_file_exists(self, yto):
+        filepath = yto.get_video_filepath()
+        return os.path.exists(filepath) and os.path.getsize(filepath) > 0
+
+    def edit_videos_file_exists(self,inputs):
+        filepath = self.get_output_filename(inputs['channel_id'], inputs['search_word'])
+        return os.path.exists(filepath) and os.path.getsize(filepath) > 0
+
     def get_output_filename(self, channel_id, search_word):
         filename = channel_id + '_' + search_word + '.mp4'
         return os.path.join(OUTPUT_DIR, filename)
