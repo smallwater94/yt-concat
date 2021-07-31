@@ -3,8 +3,11 @@ from yt_concate.pipeline.steps.preflight import Preflight
 from yt_concate.pipeline.steps.get_v_links import GetVideoList
 from yt_concate.pipeline.steps.initialize_yto import InitializeYTO
 from yt_concate.pipeline.steps.download_captions import DownloadCaptions
+from yt_concate.pipeline.steps.read_captions import ReadCaptions
 from yt_concate.pipeline.steps.postflight import Postflight
 from yt_concate.utils import Utils
+
+from yt_concate.pipeline.steps.download_vudeo import DownLoadVideos
 
 CHANNEL_ID = 'UCKSVUHI9rbbkXhvAXK-2uxA'
 
@@ -21,6 +24,7 @@ def main():
         GetVideoList(),
         InitializeYTO(),
         DownloadCaptions(),
+        ReadCaptions(),
         Postflight(),
     ]
     utils = Utils()
@@ -30,3 +34,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

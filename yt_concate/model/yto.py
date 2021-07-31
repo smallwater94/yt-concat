@@ -8,8 +8,8 @@ class YTO:
         self.url = url
         self.v_id = self.get_video_id_from_url(url)
         self.caption_filepath = self.get_caption_filepath()
-        self.video_filepath = self.get_video_filepath
-        # self.captions
+        # self.video_filepath = self.get_video_filepath()
+        self.captions = None
 
     @staticmethod
     def get_video_id_from_url(url):  # 擷取影片網址代號的部分，當作video_id

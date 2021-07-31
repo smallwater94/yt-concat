@@ -12,6 +12,7 @@ from yt_concate.pipeline.steps.step import Step
 class GetVideoList(Step):
     def process(self, transporter, inputs, utils):
         channel_id = inputs['channel_id']
+        print('開始獲頻道網址', channel_id)
         if utils.videos_list_file_exists(channel_id):
             print('此頻道網址已擷取過了')
             return self.read_file(utils.get_videos_list_filepath(channel_id))
