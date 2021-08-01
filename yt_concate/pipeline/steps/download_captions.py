@@ -1,5 +1,4 @@
 # 下載字幕
-import pickle
 from youtube_transcript_api import YouTubeTranscriptApi
 from yt_concate.pipeline.steps.step import Step
 import pickle

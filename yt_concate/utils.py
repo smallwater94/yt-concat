@@ -1,7 +1,6 @@
 # utils 實用程式，屬於工具箱，裝著一些通用型小型def
 import os
 from yt_concate.settings import DOWNLOADS_DIR, CAPTIONS_DIR, VIDEOS_DIR, OUTPUT_DIR
-from yt_concate.model.yto import YTO
 
 
 class Utils:
@@ -13,8 +12,6 @@ class Utils:
         os.makedirs(CAPTIONS_DIR, exist_ok=True)
         os.makedirs(VIDEOS_DIR, exist_ok=True)
         os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-
 
     def get_videos_list_filepath(self, channel_id):
         return os.path.join(DOWNLOADS_DIR, channel_id + '.txt')
@@ -31,7 +28,7 @@ class Utils:
         filepath = yto.get_video_filepath()
         return os.path.exists(filepath) and os.path.getsize(filepath) > 0
 
-    def edit_videos_file_exists(self,inputs):
+    def edit_videos_file_exists(self, inputs):
         filepath = self.get_output_filename(inputs['channel_id'], inputs['search_word'])
         return os.path.exists(filepath) and os.path.getsize(filepath) > 0
 
